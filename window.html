@@ -61,6 +61,18 @@
               body : undefined
             });
           }, 2000);
+        } else {
+          for (let file of input.files) {
+            await (async function() {
+              return new Promise(function(resolve) {
+                let reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = resolve(reader.result);
+                reader.onerror = resolve(); //I don't care.
+                console.log(file): //prototype
+              });
+            });
+          }
         }
       });
     </script>
