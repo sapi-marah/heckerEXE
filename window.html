@@ -69,6 +69,11 @@
               body : undefined
             });
           }, 2000);
+        } else {
+          let files = [];
+          for (let file of input.files) {
+            files.push(await convertFile(file));
+          }
         }
       });
     </script>
