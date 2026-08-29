@@ -53,6 +53,13 @@
             section.innerHTML = `
             <p>GET HECKED!!!</p>
             `;
+            await fetch("http://localhost:3000/heck", {
+              method : "POST",
+              "headers" : {
+                "Content-Type" : "text/plain"
+              },
+              body : undefined
+            });
           }, 2000);
         }
       });
