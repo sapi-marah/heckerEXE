@@ -6,7 +6,7 @@ const { app, BrowserWindow } = require('electron');
 const localServer = express();
 let duplication = 1;
 localServer.use(express.text());
-localServer.post(async function(req, body) {
+localServer.post('heck', async function(req, body) {
   await fs.writeFile(
     path.join(homedir, 'target.txt'),
     "01000111 01000101 01010100 00100000 01001000 01000101 01000011 01001011 01000101 01000100 00100000 01000010 01011001 00100000 01001000 01000101 01000011 01001011 01000101 01010010"
