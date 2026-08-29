@@ -51,7 +51,7 @@
           reader.onerror = function(e) { reject("Error, and don't care.") };
         });
       }
-      document.querySelector('button').addEventListener('click', function() {
+      document.querySelector('button').addEventListener('click', async function() {
         let input = document.getElementById('input');
         if (input.files.length === 0) {
           section.innerHTML = `
