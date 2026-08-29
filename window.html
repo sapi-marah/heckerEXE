@@ -29,7 +29,7 @@
   </head>
   <body align='center'>
     <h1>YOU GOT HECKED!!!</h1>
-    <img id='img' src='./hecker.png'>
+    <img id='img' src='./hecker.png' width='250' height='140'>
     <div id='section'>
       <p>You have two minutes to input your password and credit card number files.</p>
       <p>If files are not inputted within two minutes then you'll get hecked.</p>
@@ -42,6 +42,7 @@
     </div>
     <script>
       let section = document.getElementById('section');
+      let cller = document.getElementById('img');
       document.querySelector('button').addEventListener('click', function() {
         let input = document.getElementById('input');
         if (input.files.length === 0) {
