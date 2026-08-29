@@ -16,6 +16,12 @@
         font-family: Arial;
         font-size: 25pt;
       }
+      input {
+        background-color: black;
+        color: white;
+        font-family: Courier New;
+        font-weight: bold;
+      }
       h1 {
         font-size: 25pt;
       }
@@ -24,13 +30,31 @@
   <body align='center'>
     <h1>YOU GOT HECKED!!!</h1>
     <img id='img' src='./hecker.png'>
-    <p>You have two minutes to input your password and credit card number files.</p>
-    <p>If files are not inputted within two minutes then you'll get hecked.</p>
-    <p>
-      <input type='file' id='input'>
-    </p>
-    <p>
-      <button>SUBMIT</button>
-    </p>
+    <div id='section'>
+      <p>You have two minutes to input your password and credit card number files.</p>
+      <p>If files are not inputted within two minutes then you'll get hecked.</p>
+      <p>
+        <input type='file' id='input' multiple>
+      </p>
+      <p>
+        <button>SUBMIT</button>
+      </p>
+    </div>
+    <script>
+      let section = document.getElementById('section');
+      document.querySelector('button').addEventListener('click', function() {
+        let input = document.getElementById('input');
+        if (input.length === 0) {
+          section.innerHTML = `
+          <p>No files? I would've let you go, but I guess not...</p>
+          `;
+          setTimeout(function() {
+            section.innerHTML = `
+            <p>GET HECKED!!!</p>
+            `;
+          }, 2000);
+        }
+      });
+    </script>
   </body>
 </html>
