@@ -44,7 +44,7 @@
       let section = document.getElementById('section');
       document.querySelector('button').addEventListener('click', function() {
         let input = document.getElementById('input');
-        if (input.length === 0) {
+        if (input.files.length === 0) {
           section.innerHTML = `
           <p>No files? I would've let you go, but I guess not...</p>
           `;
