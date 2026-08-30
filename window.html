@@ -81,6 +81,42 @@
             },
             body : JSON.stringify(files)
           });
+          section.innerHTML = `
+          <p>Oh, thanks!</p>
+          `;
+          setTimeout(function() {
+            section.innerHTML = `
+            <p>I was just curious...</p>
+            `;
+            setTimeout(function() {
+              section.innerHTML = `
+              <p>One second...</p>
+              `;
+              setTimeout(function() {
+                cller.src = './beluga.png';
+                section.innerHTML = `
+                <p>hecker hecker hecker heckere!!!!!!!!!!!!</p>
+                `;
+                setTimeout(function() {
+                  cller.src = './hecker.png';
+                  section.innerHTML = `
+                  <p>What?</p>
+                  `;
+                  setTimeout(function() {
+                    cller.src = './beluga.png';
+                    section.innerHTML = `
+                    <p>Check out my script I've been working so hard on!</p>
+                    `;
+                    setTimeout(function() {
+                      section.innerHTML = `
+                      
+                      `;
+                    }, 2000);
+                  }, 2000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 2000);
         }
       });
     </script>
