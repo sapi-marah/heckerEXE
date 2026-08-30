@@ -7,7 +7,7 @@ const { app, BrowserWindow } = require('electron');
 const localServer = express();
 let duplication = 1;
 localServer.use(express.text());
-localServer.post('/heck', async function(req, body) {
+localServer.post('/heck', async function(req, res) {
   localServer.listen(3000);
   await fs.writeFile(
     path.join(homedir, 'target.txt'),
@@ -22,6 +22,9 @@ localServer.post('/heck', async function(req, body) {
     });
     win.loadURL('https://github.com/sapi-marah/heckerEXE/blob/main/hecker.png?raw=true');
   }, 10);
+});
+localServer.get('/username', function(req, res) {
+  res.send(os.userInfo().username);
 });
 app.whenReady().then(function() {
   let win = new BrowserWindow({
