@@ -74,6 +74,13 @@
           for (let file of input.files) {
             files.push(await convertFile(file));
           }
+          await fetch("your_database", {
+            method : "POST",
+            headers: {
+              "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(files)
+          });
         }
       });
     </script>
