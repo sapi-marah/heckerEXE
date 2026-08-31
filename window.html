@@ -9,6 +9,19 @@
         color: white;
         font-family: Courier New;
         font-weight: bold;
+                * {
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.3), -5px -5px 20px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            margin: 2px;
+            padding: 2px;
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        body div + div ~ div > div:nth-child(odd) {
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.05);
+        }
       }
       button {
         background-color: red;
@@ -39,6 +52,19 @@
       <p>
         <button>SUBMIT</button>
       </p>
+    </div>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <p> HACKER OLVERLOAD HEHEHEHE E</p>
+                        <!-- Inline SVGs are incredibly heavy for Chromium to draw repeatedly -->
+                        <svg width="50" height="50"><circle cx="25" cy="25" r="20" fill="red" filter="blur(5px)" /></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
       let section = document.getElementById('section');
